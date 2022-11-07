@@ -1,0 +1,66 @@
+/* package/pages/datum/datum.wxss */
+page{
+  background: #F6F6F6;
+}
+.deturm{/* 个人资料 */
+  width: 95%;
+  height: 60vh;
+  background: white;
+  margin: 30rpx auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10rpx;
+}
+.photo_box{/* 头像父盒子 */
+  width: 95%;
+  height: 80rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mes{/* 头像，文字 */
+  display: flex;
+  align-items: center;
+  color: #AEAEAE;
+}
+.mes image{/* 头像，图片 */
+  width: 65rpx;
+  height: 65rpx;
+  border-radius: 65rpx;
+  margin-right: 10rpx;
+  border: 1px solid #cccccc;
+}
+.rests_box{/* 其他父盒子 */
+  width: 95%;
+  flex: 1;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.rests{/* 其他盒子 */
+  flex: 1;
+  display: flex;
+  margin: 20rpx 0;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+.rests_mes text:last-child{/* 箭头样式 */
+  margin-left: 10rpx;
+  color: #AEAEAE;
+}
+.exit{/* 退出登录 */
+  width: 95%;
+  height: 65rpx;
+  border-radius: 40rpx;
+  color: white;
+  background: #0028AC;
+  position: fixed;
+  right: 0;left: 0;bottom: 50rpx;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

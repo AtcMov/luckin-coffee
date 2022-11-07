@@ -1,0 +1,8 @@
+<!--components/card_components/card-else/card-else.wxml-->
+<view class="else">
+  <view class="else_content_box" wx:for="{{elseList}}" wx:key="index">
+    <image class="else_img" src="{{item.icon}}" ></image>
+    <text class="else_text">{{item.title}}</text>
+    <image class="else_img" src="/image/card_img/else_06.png"></image>
+  </view>
+</view>

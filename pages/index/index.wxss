@@ -1,0 +1,278 @@
+/* pages/index/index.wxss */
+page{/* 背景颜色 */
+  background: #F1F1F1;
+}
+/* ------------------轮播图------------------ */
+swiper{/* 轮播图 */
+  height: 450rpx;
+}
+swiper image{/* 轮播图图片 */
+  width: 100%;
+}
+/* ------------------------------------------ */
+
+/* ------------------扫一扫------------------ */
+.richScan{/* 扫一扫 */
+  position: absolute;
+  left: 20rpx;
+  background-color:rgba(65,65,65,.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.richScan image{/* 扫一扫图片 */
+  width: 65%;
+  height: 65%;
+}
+/* ------------------------------------------ */
+
+/* ------------------主要展示------------------ */
+.main{/* 主要展示 */
+  width: 680rpx;
+  height: 450rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10rpx;
+  margin: auto;
+  background: white;
+}
+.main_top{ /* 顶部 */
+  flex: 2.5;
+  background: black;
+  border-radius: 8rpx 8rpx 0 0;
+  display: flex;
+  align-items: center;
+}
+.photo{ /* 图片、文字盒子 */
+  width: 45rpx;
+  height: 45rpx;
+  background: white;
+  margin-left: 25rpx;
+  border-radius: 45rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photo image{/* 图片设置 */
+  width: 80%;
+  height: 80%;
+}
+.main_top text{/* 文字 */
+  color: #FFD058;
+  font-size: 18rpx;
+  margin-left: 25rpx;
+}
+.logIn{/* 登录/注册 */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.logIn text{/* 登录/注册文字 */
+  width: 110rpx;
+  height: 25rpx;
+  text-align: center;
+  line-height: 25rpx;
+  border-radius: 20rpx;
+  margin-right: 25rpx;
+  display: inline-block;
+  background: #FFD058;
+  color: black;
+}
+.main_center,.main_bottom{/* flex分配 */
+  flex: 7.5;
+  display: flex;
+}
+.main_center{/* 中部上下间距 */
+  padding:25rpx 0 40rpx 0;
+}
+.main_center view,.main_bottom view{/* 盒子设置 */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main_center image{/* 中部图片单独处理 */
+  width: 45%;
+  height: 70%;
+}
+.main_bottom image{/* 底部图片单独处理 */
+  width: 28%;
+  height: 30%;
+}
+.main_center text:nth-of-type(odd){/* 中部，文字奇数加粗、字体大小 */
+  font-weight: 900;
+  font-size: 30rpx;
+}
+.main_bottom text:nth-of-type(odd){/* 底部，文字奇数加粗、字体大小 */
+  font-weight: 900;
+  font-size: 25rpx;
+}
+.main_center text:nth-of-type(even),.main_bottom text:nth-of-type(even){/* 偶数文字大小处理 */
+  font-size: 18rpx;
+}
+/* ------------------------------------------ */
+
+/* ------------------广告------------------ */
+.advertising{ /* 广告 */
+  width: 680rpx;
+  height: 240rpx;
+  margin: 30rpx auto;
+  position: relative;
+}
+.advertising image{ /* 广告图片 */
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+.advertising text{ /* 文字跳转 */
+  width: 100rpx;
+  height: 30rpx;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 30rpx;
+  color: #002DB7;
+  position: absolute;
+  background: white;
+  border-radius: 20rpx;
+  right: 40rpx;
+  bottom: 15rpx;
+}
+/* ------------------------------------------ */
+
+/* ------------------福利中心------------------ */
+.welfare_center{ /* 福利中心 */
+  width: 680rpx;
+  height: 210rpx;
+  margin: 30rpx auto;
+  background: white;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+.wc_headLine{/* 标题 */
+  width: 92%;
+  margin: 20rpx auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.wc_headLine text:nth-of-type(1){/* 标题左文字 */
+  font-weight: 900;
+  font-size: 38rpx;
+}
+.wc_headLine text:nth-of-type(2){/* 标题右文字 */
+  font-size: 22rpx;
+}
+.wc_activity{/* 活动 */
+  flex: 1;
+  white-space:nowrap;/* 不换行 */
+}
+.wc_activity view{/* 活动容器 */
+  width: 280rpx;
+  height: 90rpx;
+  display: inline-block;
+  margin-left: 15rpx;
+  border-radius: 10rpx;
+  background: #FDEEEA;
+}
+.wc_activity view text{/* 文字 */
+  margin-left: 30rpx;
+  float: left;
+}
+.wc_activity view text:nth-of-type(1){/* 标题 */
+  font-weight: 900;
+  margin-top: 15rpx;
+  font-size: 28rpx;
+
+}
+.wc_activity view text:nth-of-type(2){/* 说明文字 */
+  color: red;
+  font-size: 18rpx;
+}
+/* ------------------------------------------ */
+
+/* ------------------推荐------------------ */
+.recommend{/* 推荐 */
+  width: 90%;
+  margin:auto;
+}
+.merchandise_box{/* 商品盒子 */
+  width: 49%;
+  height: 400rpx;
+  display: inline-block;
+  background: white;
+  border-radius: 10rpx 10rpx 0 0;
+  margin-bottom: 20rpx;
+}
+.merchandise_box:nth-of-type(even){/* 商品盒子为奇数靠右浮动 */
+  float: right;
+}
+.m_img_box{/* 图片盒子 */
+  width: 100%;
+  height: 60%;
+  border-radius: 10rpx 10rpx 0 0 ;
+  position: relative;/* 相对定位标记 */
+}
+.m_img_box image{/* 图片盒子，主图 */
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx 10rpx 0 0;
+}
+.m_img_box text{/* 包邮文字 */
+  width: 90rpx;
+  height: 20rpx;
+  font-size: 16rpx;
+  line-height: 20rpx;
+  text-align: center;
+  border-radius: 0 5rpx 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  background: #002DB7;
+}
+.m_title_box{/* 标题 */
+  margin-left: 30rpx;
+  font-size: 24rpx;
+}
+.m_price_box,.m_tag_box,.m_salesAndAdd_box{/* 所有盒子间距 */
+  margin: 10rpx 0 0 30rpx;
+}
+.m_price_box text:nth-of-type(1){/* 现价 */
+  font-weight: 900;
+  font-size: 24rpx;
+}
+.m_price_box text:nth-of-type(2){/* 原价 */
+  font-size: 18rpx;
+  margin-left: 10rpx;
+  text-decoration: line-through;
+  color: #cccccc;
+}
+.m_tag_box{/* 赠品标签 */
+  width: 40rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  text-align: center;
+  font-size: 16rpx;
+  color: #EF9B76;
+  background: #FDE6DE;
+}
+.m_salesAndAdd_box{/* 已售和添加按钮 */
+  font-size: 22rpx;
+  color: #cccccc;
+}
+.m_salesAndAdd_box text:nth-of-type(2){/* 添加按钮 */
+  width: 30rpx;
+  height: 30rpx;
+  font-size: 30rpx;
+  float: right;
+  margin-right: 15rpx;
+  border-radius: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  color: white;
+  background: #002DB7;
+}
+

@@ -1,0 +1,36 @@
+/* components/card_components/card-else/card-else.wxss */
+.else{/* 其他 */
+  width: 90%;
+  height: 300rpx;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 25rpx;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.else_content_box{/* 内容盒子 */
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.else_img{/* 图片 */
+  width: 30rpx;
+  height: 50%;
+  margin-left: 18rpx;
+}
+.else_img:nth-of-type(2){/* 箭头图片 */
+  width: 25rpx;
+  height: 25rpx;
+  position: absolute;
+  right: 18rpx;
+
+}
+.else_text{/* 文字 */
+  font-size: 28rpx;
+  text-indent: 1em;
+}

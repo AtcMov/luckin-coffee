@@ -1,0 +1,81 @@
+/* pages/details/details.wxss */
+.image_box{
+  width: 100%;
+  height: 500rpx;
+  border: 1px solid red;
+}
+.image_box image{
+  width: 100%;
+  height: 100%;
+}
+.back{
+  position: absolute;
+  background: #ccc;
+  font-size: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rpx;
+}
+.commodity_information{
+  border: 1px solid red;
+  margin-top: 30rpx;
+  width: 100%;
+  height: 350rpx;
+}
+.information_box{
+  width: 80%;
+  height: 90%;
+  margin: 20rpx 0 0 20rpx;
+  border: 1px solid red;
+}
+.specification{
+  margin-top: 40rpx;
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+}
+.sizeName{
+  margin-right: 20rpx;
+}
+.sizeBox{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.size{
+  width: 120rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8rpx;
+  margin-right: 15rpx;
+  background: #cccc;
+  /* border: 1px solid #243069; */
+  /* color: #243069; */
+}
+.btnActive{
+  background: #EAEEFF;
+  border: 1px solid #243069;
+  color: #243069;
+}
+.recommend{
+  position: relative;
+}
+.recommend::before{
+  content: '推荐';
+  width: 50rpx;
+  height: 26rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16rpx;
+  border-radius: 10rpx 10rpx 10rpx 0;
+  position: absolute;
+  top: -13rpx;
+  right: 10rpx;
+  background: red;
+  color: white;
+}

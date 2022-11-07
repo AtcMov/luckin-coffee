@@ -1,0 +1,211 @@
+/* package/pages/pay/pay.wxss */
+page{
+  background:#F6F6F6;
+}
+/* -------------------------------------------- */
+.location{/* 店铺 */
+  width: 95%;
+  min-height: 120rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+.site{/* 店铺名 */
+  width: 65%;
+  height: 80%;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+.site text:nth-of-type(2){/* 店铺地址 */
+  font-size: 24rpx;
+  color: #cccccc;
+}
+.select_btn{/* 自提/外送 */
+  flex: 1;
+  height: 80%;
+  margin-left: 55rpx;
+}
+.way{/* 取货方式 */
+  width: 140rpx;
+  height: 45rpx;
+  position: relative;
+  background: #F7F7F7;
+  color: #ACAAAA;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.way view{/* 取货方式内view样式 */
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  border-radius: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.way view:nth-of-type(1){/* 定位 */
+  left: 0;
+}
+.way view:nth-of-type(2){/* 定位 */
+  right: 0;
+}
+/* -------------------------------------------- */
+.shops{/* 选购商品列表盒子 */
+  width: 95%;
+  /* min-height: 160rpx; */
+  margin: 0 auto;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  background: white;
+}
+.shop{/* 选购商品 */
+  width: 100%;
+  height: 160rpx;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+}
+.shop_img{/* 图片盒子 */
+  width: 180rpx;
+  height: 100%;
+}
+.shop_img image{/* 图片 */
+  width: 100%;
+  height: 100%;
+}
+.shop_content{/* 商品详情 */
+  height: 80%;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column;
+}
+.shop_content text:nth-of-type(2){/* 商品信息 */
+  font-size: 22rpx;
+  margin-top: 5rpx;
+  color: #cccccc;
+}
+.shop_price{/* 商品价格 */
+  flex: 1;
+  height: 80%;
+  margin-right: 20rpx;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+.shop_price text{/* 间距 */
+  margin-bottom: 5rpx;
+}
+.shop_price text:nth-of-type(1){/* 现价 */
+  color: red;
+}
+.shop_price text:nth-of-type(2){/* 原价 */
+  font-size: 18rpx;
+  text-decoration: line-through;
+  color: #cccccc;
+}
+.shop_price text:nth-of-type(3){/* 数量 */
+  font-size: 20rpx;
+}
+/* -------------------------------------------- */
+.pay_price_box{/* 瑞辛优惠、应付盒子 */
+  height: 180rpx;
+  border-radius: 10rpx;
+  position:  relative;
+}
+.pay_price_box::after{
+  content: '';
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 30rpx;
+  background: #F6F6F6;
+  position: absolute;
+  left: -15rpx;
+  top: 75rpx;
+}
+.pay_price_box::before{
+  content: '';
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 30rpx;
+  background: #F6F6F6;
+  position: absolute;
+  right: -15rpx;
+  top: 75rpx;
+}
+.pay_price{/* 瑞辛优惠、应付 */
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  border-top: 1px dotted #cccccc;
+  display: flex;
+  flex-direction: column;
+}
+.pay_price view{
+  flex: 1;
+}
+.pay_discounts{/* 瑞辛优惠 */
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pay_discounts text:nth-of-type(2){
+  color: red;
+  font-size: 26rpx;
+}
+.account_payable{/* 应付 */
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px dotted #cccccc;
+}
+.account_payable text:nth-of-type(1){
+  font-size: 22rpx;
+  margin-right: 5rpx;
+}
+/* -------------------------------------------- */
+.to_pay{/* 底部支付 */
+  width: 100%;
+  height: 120rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.to_pay_price{/* 价格 */
+  height: 80%;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.to_pay_price view text:nth-of-type(1){/* 应付文字 */
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+.to_pay_price view text:nth-of-type(2){/* 价格文字 */
+  font-weight: 900;
+}
+.to_pay_btn{/* 支付按钮 */
+  width: 270rpx;
+  height: 60%;
+  border-radius: 100rpx;
+  margin-right: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: #FA5831;
+}

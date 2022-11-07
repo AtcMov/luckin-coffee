@@ -1,0 +1,100 @@
+/* package/pages/selectCity/selectCity.wxss */
+page{
+  background:#F6F6F6;
+}
+.box{/* 父盒子 */
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.current_position{/* 当前定位城市 */
+  width: 95%;
+  margin: 0 auto;
+}
+.current_position text{/* 当前定位城市文本 */
+  font-size: 22rpx;
+  margin-left: 5rpx;
+}
+.current_position view{/* 图片、城市盒子 */
+  width: 100%;
+  height: 80rpx;
+  margin-top: 10rpx;
+  background: white;
+  border-radius: 5rpx;
+  display: flex;
+  align-items: center;
+}
+.current_position view image{/* 图片 */
+  width: 35rpx;
+  height: 40%;
+  margin-left: 15rpx;
+}
+.current_position view text{/* 城市 */
+  color: #002DB7;
+  font-size: 26rpx;
+}
+
+.classifyCityBox{/* 选择城市盒子 */
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* border: 1px solid red; */
+}
+.classifyCity{/* 分类盒子 */
+  width: 100%;
+  margin-top: 20rpx;
+}
+.cityI{/* 字母 */
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+.cityBox{/* 城市盒子 */
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  margin-top: 15rpx;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.city{/* 城市 */
+  width: 95%;
+  height: 80rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+}
+.city:last-of-type{/* 最后一条不显示下边框 */
+  border-bottom: none;
+}
+.opt{/* 选中样式 */
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 15rpx;
+}
+.opt image{/* 选中样式图片 */
+  width: 100%;
+  height: 100%;
+}
+.cityIndex{/* 城市索引 */
+  width: 20rpx;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 30rpx;
+  bottom: 0;
+  margin:auto;
+}
+.cityIndex text{/* 索引文本 */
+  width: 100%;
+  font-size: 20rpx;
+  text-align: center;
+  flex: 1;
+}

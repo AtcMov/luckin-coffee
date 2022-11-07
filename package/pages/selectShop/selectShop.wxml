@@ -1,0 +1,58 @@
+<!--package/pages/selectShop/selectShop.wxml-->
+<!-- -----------------回退按钮----------------- -->
+<toLast title="配送方式"></toLast>
+<!-- ----------------------------------------- -->
+
+<!-- ------------------搜索框------------------ -->
+<view class="selectCity">
+  <view class="city" bindtap="toSelectCity">
+    <text>{{city}}</text>
+    <image src="../../../image/selectShop_img/drop-down.png"></image>
+  </view>
+  <view class="line_between">|</view>
+  <view class="search">
+    <image src="../../../image/selectShop_img/search.png"></image>
+    <view><input placeholder="输入地址寻找周边门店" model:value='{{value}}' bindinput="searchShop" ></input></view>
+  </view>
+</view>
+<!-- ----------------------------------------- -->
+
+<!-- -----------------选择地址----------------- -->
+<scroll-view 
+  class="selectShop"
+  scroll-y
+  style="height: {{usableHeight}}px;"  
+><!-- 店铺滑动盒子 -->
+  <view 
+    class="shop" 
+    wx:for="{{value==''?shopList:searchShopList}}" 
+    wx:key="index" 
+    bindtap="selectShop" 
+    data-shop="{{item.shopName}}"
+    data-location="{{item.location}}"
+    data-km='{{item.km}}'
+    ><!-- 店铺 -->
+    <view class="currentShop" hidden="{{item.shopName!=shop}}">当前选择</view><!-- 当前选择文本 -->
+    <view class="shopName"><!-- 店铺名盒子 -->
+      <view>瑞辛咖啡</view><!-- 瑞辛咖啡图标 -->
+      <view>{{item.shopName}}</view><!-- 店铺名 -->
+      <view>{{item.km}}km</view><!-- 距离 -->
+    </view>
+    <view class="business_hours"><!-- 营业时间 -->
+      <view><image src="../../../image/selectShop_img/time.png"></image></view>
+      <view>{{item.business_hours}}</view>
+    </view>
+    <view class="location"><!-- 地址 -->
+      <view><image src="../../../image/selectShop_img/location.png"></image></view>
+      <view>{{item.location}}</view>
+      <view 
+      catchtap="mapNavigation" 
+      data-latitude='{{item.latitude}}'
+      data-longitude='{{item.longitude}}'
+      >地图导航</view><!-- 阻止冒泡 -->
+    </view>
+  </view>
+  <view class="hint"><!-- 末尾提示文本 -->
+    默认显示8家门店，其他门店可搜索查询
+  </view>
+</scroll-view>

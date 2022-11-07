@@ -1,0 +1,196 @@
+/* pages/my/my.wxss */
+page{/* 背景样式 */
+  background: #EFEFEF;
+}
+.top{/* 顶部 */
+  width: 100%;
+  height: 470rpx;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.banana{/* 背景图 */
+  width: 100%;
+  height: 100%;
+}
+.login{/* 登录 */
+  width: 400rpx;
+  height: 100rpx;
+  color: white;
+  position: absolute;
+  left: 40rpx;
+  top: 220rpx;
+  display: flex;
+  align-items: center;
+}
+.login view{/* 头像 */
+  width: 90rpx;
+  height: 90rpx;
+  background: white;
+  margin-right:25rpx;
+  border-radius: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login view image{/* 头像图片 */
+  width: 65%;
+  height: 65%;
+}
+.grade{/* 等级 */
+  width: 90%;
+  height: 170rpx;
+  background: white;
+  position: absolute;
+  bottom: -60rpx;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+.headLine{/* 标题 */
+  font-size: 24rpx;
+  margin: 15rpx;
+}
+.integral{/* 积分 */
+  flex: 1;
+  font-size: 35rpx;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.integral view{/* 积分，边距、大小 */
+  margin: 0 15rpx;
+  font-size: 20rpx;
+}
+.integral view:nth-of-type(1){/* 等级 */
+  font-size: 44rpx;
+  font-weight: 900;
+}
+.integral view:nth-of-type(1) image{/* 咖啡豆 */
+  width: 25rpx;
+  height: 25rpx;
+  margin-left: 5rpx;
+}
+.progress_bar{/* 进度条盒子 */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress_bar view{/* 进度条 */
+  width: 95%;
+  height: 10rpx;
+  border-radius: 10rpx;
+  background: #EFEFEF;
+}
+/* ------------------------------------------------- */
+
+.fun_box{/* 功能 */
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 120rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fun{/* 功能父盒子 */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.icon_box{/* 功能子盒子 */
+  width: 20%;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon{/* 功能 */
+  width: 70%;
+  height: 70%;
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon image{/* 功能图片 */
+  width: 60%;
+  height: 70%;
+}
+.drop_down{/* 下拉按钮 */
+  width: 40rpx;
+  height: 40rpx;
+}
+.drop_down image{/* 下拉图片 */
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------------------------------------- */
+
+.advertising{/* 广告 */
+  width: 90%;
+  height: 200rpx;
+  margin: 0 auto;
+  margin-top: 15rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  position: relative;
+}
+.advertising image{/* 广告背景图 */
+  width: 100%;
+  height: 100%;
+}
+.advertising view{/* 广告，立即查看 */
+  width: 150rpx;
+  height:35rpx;
+  color: #002DB7;
+  font-size: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 15rpx;
+  position: absolute;
+  bottom: 15rpx;
+  right: 15rpx;
+}
+
+/* ------------------------------------------------- */
+
+.gift_card{/* 送礼品卡 */
+  width: 90%;
+  height: 250rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+.gc_headLine{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gc_headLine text:nth-of-type(1){
+  font-size: 30rpx;
+}
+.gc_headLine text:nth-of-type(2){
+  font-size: 22rpx;
+}
+.gc_img{
+  flex: 1;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.gc_img view{
+  width: 48%;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.gc_img image{
+  width: 100%;
+  height: 100%;
+}

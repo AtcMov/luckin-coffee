@@ -1,0 +1,50 @@
+<!--package/pages/selectCity/selectCity.wxml-->
+<toLast title="选择城市"></toLast><!-- 导航 -->
+<scroll-view
+  class="box"
+  scroll-y
+  scroll-into-view="{{to}}" 
+  scroll-with-animation="true" 
+  style="height: {{usableHeight}}px;"
+><!-- 滚动 -->
+  <view class="current_position"><!-- 当前定位城市 -->
+    <text>当前定位城市</text>
+    <view>
+      <image src="/image/selectCity_img/location.png"></image>
+      <text>{{city}}</text>
+    </view>
+  </view>
+  <view class="classifyCityBox"><!-- 城市分类父盒子 -->
+    <view 
+      class="classifyCity" 
+      wx:for="{{cityList}}" 
+      wx:key="index" 
+      id="{{item.initial}}"><!-- 分类盒子 -->
+      <text class="cityI">{{item.initial}}</text><!-- 字母 -->
+      <view class="cityBox"><!-- 城市盒子 -->
+        <view 
+          class="city" 
+          wx:for="{{item.list}}" 
+          wx:key="index" 
+          bindtap="selectCity"
+          data-city="{{item.name}}"
+          ><!-- 城市 -->
+          {{item.name}} 
+          <view class="opt" hidden="{{item.name!=nowCity}}"><!-- 当前城市样式 -->
+            <image src="/image/selectCity_img/opt.png">
+            </image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cityIndex"><!-- 索引 -->
+    <text 
+      wx:for="{{cityList}}" 
+      wx:key="index" 
+      bindtap="toCity" 
+      data-city='{{item.initial}}'>
+      {{item.initial}}
+    </text>
+  </view>
+</scroll-view>  

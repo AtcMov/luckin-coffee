@@ -1,0 +1,184 @@
+<!--pages/menu/menu.wxml-->
+<view class="top" style="margin-top: {{menuTop}};height: {{menuHeight}};"><!-- 顶部拼单、搜索框 -->
+  <view class="share"><!-- 拼单 -->
+    <image src="../../image/menu_img/top/share.jpg"></image>
+    <text>拼单</text>
+  </view>
+  <view class="search"><!-- 搜索框 -->
+    <image src="../../image/menu_img/top/search.png"></image>
+    <text>{{searchTitle}}</text>
+    <image src="../../image/menu_img/top/face.png"></image>
+  </view>
+</view>
+
+<!-- ----------------------------------------- -->
+
+<view class="location"><!-- 地址、取货方式 -->
+  <view class="address"><!-- 定位 -->
+    <text bindtap="selectShop">{{shop}} ></text>
+    <text>{{shop=='选择门店'?'门店影响能否正常下单哦':'距您'+km+'km'}}</text>
+  </view>
+  <view class="way"><!-- 取货方式 -->
+    <view
+    style="background:{{way=='takeOut'?'none':'#002DB7'}};color:{{way=='takeOut'?'none':'white'}};"
+    bindtap="selectWay" data-way="toStore"
+    >自提</view><!-- 自提 -->
+    <view
+    style="background:{{way=='takeOut'?'#002DB7':'none'}};color:{{way=='takeOut'?'white':'none'}};"
+    bindtap="selectWay" data-way="takeOut"
+    >外送</view><!-- 外送 -->
+  </view>
+</view>
+<!-- ----------------------------------------- -->
+<view class="swiper_advertising"><!-- 文字滚动 -->
+  <view class="showText">
+    <view 
+      class="allText" 
+      style="{{i==textList.length?'transition:none;     transform:translateY(0px);':'transform:translateY('+-i*textHeight+'px); transition:1.5s;'}}"
+      ><!-- 当索引等于数组长度的时候则代表最后一条，取消过渡，将位置置为原位，否则正常位移（索引*可见区域高度 -->
+      <view class="text" wx:for="{{textList}}" wx:key="index">
+        <image src="../../image/menu_img/swiper_advertising/trumpet.png"></image>
+        <text>{{item}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="fold {{isUnfold==true?'unfold':'none'}}" 
+  style="transition: 1s;"
+  bindtap="unfold">
+    <image src="../../image/menu_img/swiper_advertising/arrows.png"></image>
+  </view>
+</view>
+
+<!-- ----------------------------------------- -->
+
+<view class="swiper_details" hidden="{{!isUnfold}}"><!-- 文字下拉详情 -->
+  <view wx:for="{{textList}}" wx:key="index" wx:if="{{textList.length-1!==index}}"><!-- 最后一条不显示（因为js中为数组末尾添加了第一条数据） -->
+    <image src="../../image/menu_img/swiper_advertising/trumpet.png"></image>
+    <text>{{item}}</text>
+  </view>
+  
+</view>
+
+<!-- ----------------------------------------- -->
+<view class="menu"><!-- 菜单 -->
+  <scroll-view 
+    class="anchorBox" 
+    scroll-y 
+    show-scrollbar='true' 
+    style="height: {{usableHeight*2}}rpx;"><!-- 菜单导航 -->
+    <view 
+      class="anchor {{index==anchorI?'activeAnchor':'none'}}" 
+      wx:for="{{commodityList}}" 
+      wx:key="index" 
+      bindtap="selectAnchor" 
+      data-index='{{index}}'
+      ><!-- 菜单项 -->
+      <view hidden="{{index!==anchorI}}"></view><!-- 球，样式 -->
+      <text>{{item.headLine}}</text><!-- 文字 -->
+      <view wx:if="{{item.isViceTitle}}">{{item.viceTitle}}</view><!-- 悬浮样式 -->
+    </view>
+  </scroll-view>
+  <scroll-view 
+    class="commodityBox" 
+    scroll-y show-scrollbar='true'  
+    scroll-into-view="{{to}}" 
+    scroll-with-animation="true" 
+    bindscroll='scroll'
+    style="height: {{usableHeight*2}}rpx;"><!-- 商品 -->
+    <view 
+      id='{{item.id}}'
+      class="commoditys" 
+      wx:for="{{commodityList}}" 
+      wx:key="index" 
+      bindtap="toDetail"
+      data-title="{{item.title}}"
+      ><!-- 盒子 -->
+      <view class="headLineBox"><!-- 标题盒子 -->
+        <text>{{item.headLine}}</text><!-- 标题 -->
+        <text>{{item.subHead}}</text><!-- 副标题 -->
+      </view>
+      <view class="commodity"><!-- 内容 -->
+        <view class="c_image_box"><!-- 图片盒子 -->
+          <image src="../../image/menu_img/commodity/coffee.jpg"></image><!-- 图片 -->
+        </view>
+        <view class="c_mes_box"><!-- 详情信息盒子 -->
+          <text  class="c_name">{{item.title}}</text><!-- 商品名 -->
+          <text class="c_tag">首杯价</text><!-- 标签 -->
+          <text class="c_title"><!-- 宣传文本，多项 -->
+            <text wx:for="{{item.titleList}}" wx:key="index">
+              <text hidden="{{index==0}}" style="margin: 0 10rpx 0 10rpx;">|</text><!-- 左侧显示分隔符，第一项不显示 -->
+              <text>{{item}}</text>
+            </text>
+          </text>
+          <text class="c_price_box"><!-- 价格盒子 -->
+            <text>￥{{item.price}}</text><!-- 现价 -->
+            <text>￥{{item.originalPrice}}</text><!-- 原价 -->
+            <text>+</text><!-- 按钮 -->
+          </text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- ----------------------------------------- -->
+<view class="shopping_trolley {{showPay==true || payShopData!=''?'shopping_trolley_Acitve':'none'}}" style="transition: .5s;"><!-- 购物车 -->
+  <view class="pay_img" bindtap="isShowPay"><!-- 购物车图片 -->
+    <image src="/image/menu_img/shopping-trolley.png"></image><!-- 图片 -->
+    <view wx:if="{{showPay || payShopData!=''}}">{{payShopData.length}}</view><!-- 角标，数量 -->
+  </view>
+  <view class="pay" wx:if="{{showPay || payShopData!=''}}" bindtap="isShade"><!-- 支付信息盒子 -->
+    <view class="price"><!-- 价格 -->
+      <text>预计到手</text>
+      <text style="color: red;">￥</text>
+      <text style="font-size: 38rpx;color: red;">{{allPrice}}</text>
+    </view>
+    <view class="pay_btn {{payShopData!=''?'pay_btn_Active':'none'}}" catchtap="toPay"><!-- 结算按钮 -->
+      {{payShopData==''?'不可结算':'去结算'}}
+    </view>
+  </view>
+</view>
+
+<!-- ----------------------------------------- -->
+
+<view class="shade" hidden="{{!shade}}" bindtap="isShade"></view><!-- 遮罩 -->
+
+<!-- ----------------------------------------- -->
+
+<view class="shops" hidden="{{!shade}}"><!-- 选购商品 -->
+  <view class="shops_top_box"><!-- 顶部模块盒子 -->
+    <view class="shops_top"><!-- 顶部模块 -->
+      <view class="shops_top_btn"><!-- 顶部按钮、文字 -->
+        <view class="{{allState==true?'shops_top_btn_Acitve':'none'}}" bindtap="isAllState">√</view>
+        <text>已选购商品</text>
+        <text>（{{payShopData.length}}件）</text>
+      </view>
+      <view class="shop_top_del" bindtap="delAllShops"><!-- 清空购物车 -->
+      <image src="/image/menu_img/del.png"></image><!-- 删除图 -->
+        清空购物车
+      </view>
+    </view>
+  </view>
+  <view class="shops_btm_box"><!-- 底部模块 -->
+    <view class="shops_btm" wx:for="{{payShopData}}" wx:key="index">
+      <view class="shops_btm_btn {{item.state?'shops_btm_btn_Active':'none'}}" bindtap="isState" data-index="{{index}}">√</view><!-- 按钮 -->
+      <view class="shops_btm_shop"><!-- 商品图片 -->
+        <image src="{{item.url}}"></image>
+      </view>
+      <view class="shops_btm_content"><!-- 商品内容 -->
+        <view class="c_shop_name"><!-- 商品名 -->
+          <text>{{item.title}}</text>
+          <text>{{item.information}}</text>
+        </view>
+        <view class="c_shop_price"><!-- 价格 -->
+          <text>￥{{item.price}}</text>
+          <text>￥{{item.originalPrice}}</text>
+        </view>
+      </view>
+      <view class="shops_btm_add"><!-- 数量按钮 -->
+        <view bindtap="num_minus" data-index="{{index}}">-</view>
+        <text>{{item.num}}</text>
+        <view bindtap="num_add" data-index="{{index}}">+</view>
+      </view>
+    </view>
+  </view><!-- 底部商品列表 -->
+</view>

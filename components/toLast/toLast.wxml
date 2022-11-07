@@ -1,0 +1,8 @@
+<!--components/toLast/toLast.wxml-->
+<view 
+  class="toLast" 
+  style="height: {{menuHeight}}px;margin-top: {{menuTop}}px;"
+  >
+  <image class="img" src="../../image/selectShop_img/return.png" bindtap="toNext"></image>
+  <text class="font">{{title}}</text>
+</view>

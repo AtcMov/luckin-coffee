@@ -1,0 +1,17 @@
+<!--package/pages/pay/pay.wxml-->
+<toLast title="支付中心"></toLast><!-- 返回组件 -->
+<view class="select_pay_box"><!-- 选择支付父盒子 -->
+  <view class="select_pay" wx:for="{{fakeData}}" wx:key="index"><!-- 选择支付盒子 -->
+    <view class="pay" ><!-- 支付 -->
+      <view class="pay_img"><!-- 图片盒子 -->
+        <image src="{{item.url}}"></image><!-- 图片 -->
+      </view>
+      <text>{{item.title}}</text><!-- 名 -->
+      <view class="pay_btn"><!-- 勾选按钮盒子 -->
+        <view class="{{index==i?'pay_btn_active':'none'}}" bindtap="selectPay" data-i="{{index}}">√</view><!-- 勾选按钮 -->
+      </view>
+    </view>
+  </view>
+</view>
+<view class="to_pay" bindtap="toPay">确定支付</view><!-- 确定支付 -->
+ 

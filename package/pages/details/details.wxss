@@ -1,0 +1,217 @@
+/* pages/details/details.wxss */
+/* -----------------------主图----------------------- */
+.image_box{/* 主图盒子 */
+  width: 100%;
+  height: 500rpx;
+}
+.image_box image{/* 图片 */
+  width: 100%;
+  height: 100%;
+}
+/* ------------------------------------------------- */
+
+/* -----------------------回退----------------------- */
+.back{/* 回退 */
+  position: fixed;
+  background: #ccc;
+  font-size: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rpx;
+}
+/* ----------------------------------------------------- */
+
+/* -----------------------商品信息----------------------- */
+.commodity_information{/* 商品信息父盒子 */
+  width: 100%;
+  position: relative;
+  /* margin-top: 30rpx; */
+  /* border: 1px solid red; */
+}
+.name{
+  padding: 20rpx 0 0 20rpx;
+}
+.contentBox{/* 内容盒子 */
+  margin-top: 30rpx;
+  font-size: 20rpx;
+  /* border: 1px solid blue; */
+}
+.content{/* 规格盒子 */
+  display: flex;
+  flex-direction: column;
+}
+.sizeName{/* 规格名 */
+  margin-right: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.sizeBox{
+  display: flex;
+  margin: 0 0 30rpx 20rpx;
+}
+.size{/* 单选按钮 */
+  width: 120rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8rpx;
+  margin-right: 15rpx;
+  background: #F7F7F7;
+  border: 1px solid #F7F7F7;/* 加边框防止切换抖动 */
+}
+.btnActive{/* 单选选中样式 */
+  background: #EAEEFF;
+  border: 1px solid #243069;
+  color: #243069;
+}
+.recommend{/* 标签 */
+  position: relative;
+}
+.recommend::before{/* 标签伪类 */
+  content: '推荐';
+  width: 50rpx;
+  height: 26rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16rpx;
+  border-radius: 10rpx 10rpx 10rpx 0;
+  position: absolute;
+  top: -13rpx;
+  right: 10rpx;
+  background: #F85730;
+  color: white;
+}
+/* ----------------------------------------------------- */
+
+/* -----------------------收藏口味----------------------- */
+.collect{
+  width:70rpx;
+  height: 70rpx;
+  border-radius: 70rpx;
+  background: white;
+  position: absolute;
+  top: -40rpx;
+  right: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collect::before{
+  content: '收藏口味';
+  width: 80rpx;
+  font-size: 20rpx;
+  bottom: -30rpx;
+  position: absolute;
+}
+.collect image{
+  width: 50%;
+  height: 45%;
+}
+/* ----------------------------------------------------- */
+
+/* ------------------------其他------------------------- */
+.rests{
+  width: 100%;
+  padding-top: 5rpx;
+  background: #F6F6F6;
+}
+.textBox{
+  width: 97%;
+  height: 300rpx;
+  background: white;
+  margin: auto;
+  border-radius:10rpx ;
+  margin-top: 20rpx;
+}
+.textBox view:nth-of-type(1){
+  padding: 15rpx 0 0 20rpx;
+}
+.textBox view:nth-of-type(2){
+  font-size: 24rpx;
+  padding: 15rpx 0 0 20rpx;
+}
+/* ----------------------------------------------------- */
+
+/* ------------------------结算------------------------ */
+.clearing{/* 底部，绝对定位 */
+  width: 100%;
+  height: 150rpx;
+  position: fixed;
+  bottom: 15rpx;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  /* border: 1px solid red; */
+}
+.cl_top{/* 上部 */
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.total_price text:nth-of-type(1){/* 现价 */
+  color: #F85730;
+}
+.total_price text:nth-of-type(2){/* 原价 */
+  font-size: 24rpx;
+  text-decoration: line-through;/* 删除线 */
+  color: #8F8F8F;
+}
+.add_price{/* 添加按钮 */
+  font-size: 20rpx;
+  color: #8F8F8F;
+}
+.btn_price{/* 添加 */
+  display: flex;
+  align-items: center;
+}
+.btn_price view{/* 添加按钮 */
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn_price view image{/* 添加按钮图片 */
+  width: 70%;
+  height: 70%;
+}
+.btn_price view:nth-of-type(1){/* 第一个添加按钮样式 */
+  border: 1px solid #001E98;
+}
+.btn_price view:nth-of-type(2){/* 第二个添加按钮样式 */
+  background:#001E98;
+  border: 1px solid #001E98;
+  color: white;
+}
+.btn_price text{/* 数量 */
+  margin: 0 20rpx 0 20rpx;
+}
+.cl_btm{/* 底部 */
+  flex: 1;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: center;
+}
+.cl_btm view{/* 底部按钮 */
+  width: 45%;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40rpx;
+}
+.cl_btm view:nth-of-type(1){/* 立即购买按钮 */
+  border: 1px solid #B8A690;
+  color: #B8A690;
+  margin-right: 30rpx;
+}
+.cl_btm view:nth-of-type(2){/* 加入购物车按钮 */
+  border: 1px solid #001E98;
+  background: #001E98;
+  color: white;
+}

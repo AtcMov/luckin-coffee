@@ -1,0 +1,29 @@
+<!--components/card-open-vip/card-open-vip.wxml-->
+<view class="open_vip"><!-- 开通月份 -->
+  <view 
+    class="open_time" 
+    wx:for="{{carouselList}}" 
+    wx:key="index" 
+    bindtap="selectVip"
+    data-i="{{index}}"
+    ><!-- 盒子 -->
+    <view class="hint" wx:if="{{index==1?false:true}}">{{hint}}</view><!-- 标签 -->
+    <view class="text" style="color: {{i==index?'#744702':'none'}};"><!-- 内容 -->
+      <view 
+      class="text_top" 
+      style="border: {{i==index?'4rpx solid #CAAF87':'4rpx solid transparent'}};  background: {{i==index?'rgba(242,235,225, .5)':'white'}};"><!-- 上部价格 -->
+        <text class="time">{{item.tiem}}</text><!-- 开通时间 -->
+        <text class="current_price"><!-- 现价 -->
+          <text class="symbol">￥</text>{{item.current_price}}
+        </text>
+        <text class="original_price">￥{{item.original_price}}</text><!-- 原价 -->
+      </view>
+      <view 
+        class="text_bottom" 
+        style="border: {{i==index?'4rpx solid #CAAF87':'4rpx solid #EDD8B3'}};background: {{i==index?'rgba(221,181,119, .7)':'#EDD8B3'}};"><!-- 下部，提示文字 -->
+        <text>{{item.hint}}</text>
+        <text style="color: red;">{{item.hintElse}}</text><!-- 文字飘红 -->
+      </view>
+    </view>
+  </view>  
+</view>

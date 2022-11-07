@@ -1,0 +1,111 @@
+<!--pages/index/index.wxml-->
+<swiper indicator-dots='true' autoplay="true" circular="true">
+  <swiper-item wx:for="{{bananaList}}" wx:key="id">
+    <image src="{{item.src}}"></image>
+  </swiper-item>
+</swiper>
+
+<!-- ----------------------------------------- -->
+
+<view class="richScan" bindtap="richScan" style="top: {{meduTop}};width: {{meduHeight}};height: {{meduHeight}};border-radius: {{meduHeight}};"> <!-- 扫一扫 -->
+  <image src="../../image/index_img/richScan.png"></image>
+</view>
+
+<!-- ----------------------------------------- -->
+
+<view class="main"><!-- 主要内容 -->
+  <view class="main_top"><!-- 顶部 -->
+    <view class="photo">
+      <image src="../../image/index_img/default_photo.png"></image>
+    </view>
+    <text>Lucky you~跟幸运打个招呼</text>
+    <view class="logIn" bindtap="logIn" wx:if="{{isLogin}}"><text>登录/注册</text></view>
+  </view>
+  <view class="main_center"><!-- 中部 -->
+    <view class="to_store" bindtap="toMenu" data-way='toStore'>
+      <image src="../../image/index_img/main/to_store.png"></image>
+      <text>到店取</text>
+      <text>提取下单自取</text>
+    </view>
+    <view class="take_out" bindtap="toMenu" data-way="takeOut">
+      <image src="../../image/index_img/main/take_out.png"></image>
+      <text>幸运送</text>
+      <text style="color: red;">无接触及时送</text>
+    </view>
+    <view class="rim">
+      <image src="../../image/index_img/main/rim.png"></image>
+      <text>买潮品</text>
+      <text>瑞幸颜值周边</text>
+    </view>
+  </view>
+  <view class="main_bottom"><!-- 底部 -->
+    <view>
+      <image src="../../image/index_img/main/pay.png"></image>
+      <text>充4赠3</text>
+      <text>咖啡钱包</text>
+    </view>
+    <view>
+      <image src="../../image/index_img/main/gift.png"></image>
+      <text>礼品卡</text>
+      <text>传情达意</text>
+    </view>
+    <view>
+      <image src="../../image/index_img/main/weal.png"></image>
+      <text>福利中心</text>
+      <text>天天得福利</text>
+    </view>
+    <view>
+      <image src="../../image/index_img/main/crowdordering.png"></image>
+      <text>拼单满减</text>
+      <text>一起点更划算</text>
+    </view>
+  </view>
+</view>
+
+<!-- ----------------------------------------- -->
+
+<view class="advertising"><!-- 广告 -->
+  <image src="../../image/index_img/main/advertising.jpg"></image>
+  <text>立即查看></text>
+</view>
+
+<!-- ----------------------------------------- -->
+
+<view class="welfare_center"><!-- 福利中心 -->
+  <view class="wc_headLine"><!-- 标题 -->
+    <text>福利中心</text>
+    <text>查看全部</text>
+  </view>
+  <scroll-view scroll-x show-scrollbar='true'	 class="wc_activity"><!-- 福利中心，活动 -->
+    <view wx:for="{{activityList}}" wx:key="id">
+      <text>{{item.headLine}}</text>
+      <text>{{item.title}}</text>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- ----------------------------------------- -->
+
+<view class="recommend"><!-- 推荐 -->
+  <view class="merchandise_box" wx:for="{{coffeeList}}" wx:key="index" bindtap="toDetails" data-title="{{item.title}}"><!-- 商品盒子 -->
+    <view class="m_img_box"><!-- 图片盒子 -->
+      <image src="{{item.url}}"></image><!-- 图片 -->
+      <text wx:if="{{item.gabalnara}}">免运费</text><!-- 包邮 -->
+    </view>
+    <view class="m_title_box">{{item.title}}<!-- 标题盒子 -->
+      <text></text><!-- 标题 -->
+    </view>
+    <view class="m_price_box"><!-- 价格盒子 -->
+      <text>￥{{item.price}}</text><!-- 价格 -->
+      <text>￥{{item.originalPrice}}</text><!-- 原价 -->
+    </view>
+    <view class="m_tag_box"><!-- 标签盒子 -->
+      <text>赠品</text><!-- 标签 -->
+    </view>
+    <view class="m_salesAndAdd_box"><!-- 销量、添加盒子 -->
+      <text>已售卖{{item.sale}}+杯</text><!-- 销量 -->
+      <text>+</text><!-- 添加 -->
+    </view>
+  </view>
+</view>
+

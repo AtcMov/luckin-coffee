@@ -1,0 +1,57 @@
+<!--pages/card/card.wxml-->
+<swiper 
+  style="margin-top: {{top+5}}px;" 
+  previous-margin='12px'
+  next-margin='12px' 
+  bindchange='bindchange'
+>
+  <swiper-item wx:for="{{imgList}}" wx:key="index">
+    <image 
+      src="{{item.url}}" 
+      style="height: {{index==current?'95%':'85%'}};"><!-- 当前显示图片放大 -->
+    </image>
+  </swiper-item>
+</swiper><!-- 轮播图，前后边距、滑动事件 -->
+
+<view class="indicatorBox">
+  <view 
+    class="indicator {{current==index?'indicatorActive':'none'}}"
+    wx:for="{{imgList}}" 
+    wx:key="index">
+   </view>
+</view><!-- 索引，当前所有改变样式 -->
+
+<luckin-card wx:if="{{current==0}}" /><!-- 自由卡 -->
+
+<fitness-card wx:if="{{current==1}}" /><!-- 健康卡 -->
+
+<coco-card wx:if="{{current==2}}" /><!-- 生椰卡 -->
+
+<view class="reserved"></view><!-- 预留，防止定位遮住元素 -->
+
+<view class="to_pay"><!-- 底部支付 -->
+  <view class="agreement"><!-- 协议 -->
+    <view 
+      class="isTrue {{isTrue==true?'isTrueActive':'none'}}"
+      bindtap="isRead"
+    >√</view><!-- 单选框 -->
+    <text class="textBox"><!-- 文字 -->
+      <text>我已阅读并同意</text>
+      <text style="color: black;margin-left: 5rpx;">《付费会员服务协议》</text>
+    </text>
+  </view>
+  <view class="payBox" ><!-- 支付盒子 -->
+    <view class="pay" bindtap="isShade"><!-- 支付 -->
+      <text class="payText" style="margin-bottom: {{marginBottom}}px;">立即购买</text><!-- 立即购买 -->
+      <text class="payPrice" style="margin-bottom: {{marginBottom-2}}px;"><!-- 现价 -->
+        <text style="font-size: 22rpx;">￥</text>
+        <text>{{payData.current_price}}</text>
+      </text>
+      <text class="pay_originalPrice" style="margin-bottom: {{marginBottom+1}}px;">￥{{payData.original_price}}</text><!-- 原价 -->
+    </view>
+  </view>
+</view>
+
+<view class="shade" hidden="{{!shade}}">
+  <text>请先阅读并同意《付费会员服务协议》</text>
+</view>

@@ -1,0 +1,13 @@
+<!--components/fitness-card/fitness-card.wxml-->
+<card-open-vip carouselList="{{carouselList}}" hint="{{'联合特惠'}}"/><!-- 选择时间 -->
+
+<view class="benefit"><!-- 开通特权 -->
+  <view class="content_box" wx:for="{{benefitList}}" wx:key="index"><!-- 内容盒子 -->
+    <view class="content"><!-- 内容 -->
+        <image class="img" src="{{item.url}}"></image>
+        <text>{{item.title}}</text>
+    </view>
+  </view>
+</view>
+
+<card-else/><!-- 其他 -->

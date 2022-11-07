@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "luckin-card":"/components/card_components/luckin-card/luckin-card",
+    "fitness-card":"/components/card_components/fitness-card/fitness-card",
+    "coco-card":"/components/card_components/coco-card/coco-card"
+  }
+}

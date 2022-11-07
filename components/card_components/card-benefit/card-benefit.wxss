@@ -1,0 +1,44 @@
+/* components/card-benefit/card-benefit.wxss */
+.benefit{/* 父盒子 */
+  width: 90%;
+  height: 200rpx;
+  margin: 0 auto;
+  margin-top: 25rpx;
+  background: white;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.benefit_content_box{/* 内容盒子 */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.benefit_content{/* 内容 */
+  width: 120rpx;
+  height: 120rpx;
+  font-size: 20rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.benefit_hint{/* 标签 */
+  width: 22rpx;
+  height: 80rpx;
+  font-size: 16rpx;
+  text-align: center;
+  writing-mode:vertical-rl;/* 文字纵向排序 */
+  border-radius: 10rpx;
+  color: white;
+  background: #F85837;
+  position: absolute;
+  top: -5rpx;
+  right: -25rpx;
+}
+.benefit_img{/* 图片 */
+  width: 75%;
+  height: 70%;
+  margin-bottom: 5rpx;
+}

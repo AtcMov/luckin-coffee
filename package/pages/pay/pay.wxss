@@ -1,0 +1,73 @@
+/* package/pages/pay/pay.wxss */
+page{
+  background:#F6F6F6;
+}
+.select_pay_box{/* 选择支付父盒子 */
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  background: white;
+}
+.select_pay{/* 选择支付盒子 */
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px dotted #cccccc;
+}
+.select_pay:nth-last-child(1){/* 最后一个不显示下边框 */
+  border-bottom: none;
+}
+.pay{/* 支付 */
+  width: 100%;
+  height: 70%;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+}
+.pay_img{/* 图片盒子 */
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  /* border: 1px solid red; */
+}
+.pay_img image{/* 图片 */
+  width: 100%;
+  height: 100%;
+}
+.pay_btn{/* 勾选按钮盒子 */
+  flex: 1;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+.pay_btn view{/* 勾选按钮 */
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 35rpx;
+  margin-right: 20rpx;
+  color: white;
+  border: 1px solid #0028AC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pay_btn_active{
+  background: #0028AC;
+}
+.to_pay{/* 确定支付 */
+  width: 95%;
+  height: 60rpx;
+  border-radius: 50rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  color: white;
+  background: #0028AC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

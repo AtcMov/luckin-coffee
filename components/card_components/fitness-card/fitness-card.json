@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "card-open-vip":"/components/card_components/card-open-vip/card-open-vip",
+    "card-benefit":"/components/card_components/card-benefit/card-benefit",
+    "card-else":"/components/card_components/card-else/card-else"
+  }
+}

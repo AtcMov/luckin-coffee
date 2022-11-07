@@ -1,0 +1,14 @@
+/* components/toLast/toLast.wxss */
+.toLast{/* 回退盒子 */
+  display: flex;
+  align-items: center;
+}
+.img{/* 回退按钮 */
+  width: 45rpx;
+  height: 45rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
+.font{
+  font-size: 32rpx;
+}

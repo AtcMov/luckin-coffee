@@ -1,0 +1,121 @@
+/* pages/card/card.wxss */
+page{/* 背景色 */
+  background: #F6F6F6;
+}
+swiper{/* 轮播图 */
+  height: 390rpx;
+}
+swiper-item{/* 轮播图盒子 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+swiper image{/* 轮播图，图片 */
+  width: 97%;
+  height: 85%;
+  border-radius: 20rpx;
+  box-shadow: 0 15rpx 20rpx -20rpx black;
+}
+.indicatorBox{/* 索引盒子 */
+  margin-top: 5rpx;
+  height: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.indicator{/* 索引 */
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 20rpx;
+  margin-left: 15rpx;
+  background: #cccccc;
+}
+.indicatorActive{/* 索引激活状态 */
+  width: 60rpx;
+  height: 20rpx;
+  background: #002DB7;
+}
+/* ------------------------------------ */
+
+/* ----------------预留---------------- */
+.reserved{/* 预留 */
+  height: 200rpx;
+}
+/* ------------------------------------ */
+
+/* --------------底部支付-------------- */
+.to_pay{/* 底部支付 */
+  width: 100%;
+  height: 140rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid #cccccc;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+.agreement{/* 协议 */
+  color: #B8B8B8;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.isTrue{/* 单选框 */
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 20rpx;
+  margin: 0 10rpx 0 10rpx;
+  border: 1px solid #C9B8A5;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.isTrueActive{
+  background: #C3A379;
+}
+.payBox{/* 支付盒子 */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.pay{/* 支付 */
+  width: 90%;
+  height: 75%;
+  font-weight: 900;
+  color: #845C1D;
+  background: #EACC99;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 30rpx;
+}
+.payText{/* 立即购买文字 */
+  font-size: 26rpx;
+}
+.payPrice{/* 现价 */
+  font-size: 38rpx;
+}
+.pay_originalPrice{/* 原价 */
+  margin-left: 5rpx;
+  font-size: 22rpx;
+  text-decoration: line-through;
+}
+.shade{/* 遮罩 */
+  width: 350rpx;
+  height: 150rpx;
+  text-align: center;
+  color: white;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;left: 0;right: 0;bottom: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, .6);
+}

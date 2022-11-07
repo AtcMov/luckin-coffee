@@ -1,0 +1,145 @@
+/* pages/order/order.wxss */
+page{/* 背景色 */
+  background: #F6F6F6;
+}
+.headLine{/* 顶部文字 */
+  margin-left: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.order{/* 没有订单 */
+  width: 350rpx;
+  height: 170rpx;
+  position: fixed;
+  top: 0;right: 0;left: 0;bottom: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.order text{/* 文字 */
+  color: #9B9B9B;
+}
+.order view{/* 按钮 */
+  width: 100%;
+  height: 65rpx;
+  color: white;
+  text-align: center;
+  line-height: 65rpx;
+  border-radius: 40rpx;
+  background: #0028AC;
+}
+.shop_box{
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.shop{
+  width: 100%;
+  border-radius: 10rpx;
+  background: white;
+  margin-bottom: 30rpx;
+}
+.top{
+  width: 95%;
+  height: 60rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.top view:nth-of-type(1){
+  width: 60rpx;
+  font-size: 24rpx;
+  text-align: center;
+  margin-right: 10rpx;
+  color: white;
+}
+.top view:last-child{
+  font-size: 22rpx;
+  flex: 1;
+  text-align: right;
+}
+.shop_name{
+  font-size: 24rpx;
+}
+.main{
+  width: 95%;
+  margin: 0 auto;
+}
+.main_shop{
+  height: 110rpx;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  margin: 0 0 25rpx 0;
+}
+.main_shop:nth-of-type(1){
+  border-top: 1px solid #cccccc;
+}
+.main_shop:last-of-type{
+  border-bottom: 1px dotted #cccccc;
+}
+.img_box{
+  width: 90rpx;
+  height: 90rpx;
+  /* border: 1px solid red; */
+}
+.img_box image{
+  width: 100%;
+  height: 100%;
+}
+.content_box{
+  height: 60%;
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+}
+.content_box text:nth-of-type(1){
+  font-weight: 900;
+  font-size: 28rpx;
+}
+.content_box text:nth-of-type(2){
+  font-size: 24rpx;
+  color: #cccccc;
+}
+.num_box{
+  flex: 1;
+  font-size: 22rpx;
+  color: #cccccc;
+  text-align: right;
+  /* border: 1px solid red; */
+}
+.bottom{
+  width: 95%;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+}
+.time_price{
+  height: 30rpx;
+  font-size: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.recur{
+  height: 50rpx;
+  margin-top: 10rpx;
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.recur view{
+  width: 120rpx;
+  height: 35rpx;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 35rpx;
+  border-radius: 30rpx;
+  color: #0028AC;
+  border: 1px solid #0028AC;
+}

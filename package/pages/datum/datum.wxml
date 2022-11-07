@@ -1,0 +1,21 @@
+<!--package/pages/datum/datum.wxml-->
+<toLast title="个人资料"></toLast>
+<view class="deturm"><!-- 个人资料父盒子 -->
+  <view class="photo_box"><!-- 头像父盒子 -->
+    <view class="title">头像</view>
+    <view class="mes">
+      <image src="/image/index_img/default_photo.png"></image>
+      <text>></text>
+    </view>
+  </view>
+  <view class="rests_box"><!-- 其他父盒子 -->
+    <view class="rests" wx:for="{{dataList}}" wx:key="id"><!-- 其他盒子 -->
+      <view class="rests_title">{{item.title}}</view>
+      <view class="rests_mes">
+        <text style="color: {{item.mes=='完善信息'?'#0028AC':'none'}};">{{item.mes}}</text>
+        <text>></text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="exit" bindtap="exit">退出登录</view>

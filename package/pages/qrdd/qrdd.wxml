@@ -1,0 +1,60 @@
+<!--package/pages/pay/pay.wxml-->
+<toLast title="确认订单"></toLast><!-- 返回组件 -->
+<view class="location"><!-- 地址 -->
+  <view class="site">
+    <text>{{shop}}</text><!-- 店铺名 -->
+    <text>{{location}}</text><!-- 地址 -->
+  </view>
+  <view class="select_btn"><!-- 自提/外送 -->
+    <view class="way"><!-- 取货方式 -->
+    <view
+    style="background:{{way=='takeOut'?none:'#002DB7'}};color:{{way=='takeOut'?none:'white'}};"
+    bindtap="selectWay" data-way="toStore"
+    >自提</view><!-- 自提 -->
+    <view
+      style="background:{{way=='takeOut'?'#002DB7':none}};color:{{way=='takeOut'?'white':none}};"
+      bindtap="selectWay" data-way="takeOut"
+    >外送</view><!-- 外送 -->
+    </view>
+  </view>
+</view>
+<view class="shops"><!-- 选购商品列表盒子 -->
+  <view class="shop" wx:for="{{data}}" wx:key="index"><!-- 选购商品 -->
+    <view class="shop_img"><!-- 图片盒子 -->
+      <image src="{{item.url}}"></image><!-- 图片 -->
+    </view>
+    <view class="shop_content"><!-- 商品详情 -->
+      <text>{{item.title}}</text><!-- 商品名 -->
+      <text>{{item.information}}</text><!-- 商品信息 -->
+    </view>
+    <view class="shop_price"><!-- 商品价格 -->
+      <text>￥{{item.price}}</text><!-- 现价 -->
+      <text>￥{{item.originalPrice}}</text><!-- 原价 -->
+      <text>X {{item.num}}</text><!-- 数量 -->
+    </view>
+  </view>
+  <view class="pay_price_box"><!-- 瑞辛优惠、应付盒子 -->
+    <view class="pay_price"><!-- 瑞辛优惠、应付 -->
+      <view class="pay_discounts"><!-- 瑞辛优惠 -->
+        <text>瑞辛优惠</text>
+        <text>-￥{{discount}}</text>
+      </view>
+      <view class="account_payable"><!-- 应付 -->
+        <text>应付</text>
+        <text>￥{{payPrice}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="to_pay"><!-- 底部支付 -->
+  <view class="to_pay_price"><!-- 价格 -->
+    <view>
+      <text>应付</text>
+      <text>￥{{payPrice}}</text>
+    </view>
+    <text style="color: red;font-size: 22rpx;">总计优惠￥{{discount}}</text>
+  </view>
+  <view class="to_pay_btn" bindtap="to_pay"><!-- 支付按钮 -->
+    去支付
+  </view>
+</view>

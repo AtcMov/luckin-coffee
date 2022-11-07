@@ -1,0 +1,10 @@
+<!--components/card-benefit/card-benefit.wxml-->
+<view class="benefit"><!-- 开通特权 -->
+  <view class="benefit_content_box" wx:for="{{benefitList}}" wx:key="index"><!-- 内容盒子 -->
+    <view class="benefit_content"><!-- 内容 -->
+      <text class="benefit_hint">{{item.hint}}</text><!-- 提示文本 -->
+      <image class="benefit_img" src="{{item.url}}"></image><!-- 图片 -->
+      <text>{{item.title}}</text><!-- 文字 -->
+    </view>
+  </view>
+</view>

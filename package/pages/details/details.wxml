@@ -1,0 +1,132 @@
+<!--pages/details/details.wxml-->
+<!-- -----------------主图----------------- -->
+<view class="image_box">
+  <image src="{{commodity.url}}"></image>
+</view>
+<!-- ----------------------------------------- -->
+
+<!-- -----------------回退按钮----------------- -->
+<view 
+  class="back" 
+  style="width:{{capsuleHeight*2}}rpx;height: {{capsuleHeight*2}}rpx;top: {{capsuleMarginTop*2}}rpx;border-radius: {{capsuleHeight*2}}rpx;"
+  bindtap="toBack"
+  >
+  <text>X</text>
+</view>
+<!-- ----------------------------------------- -->
+
+<!-- -----------------商品信息----------------- -->
+<view class="commodity_information">
+    <view class="name">{{commodity.title}}</view><!-- 商品名 -->
+    <view class="contentBox"><!-- 内容盒子 -->
+      <view class="content"><!-- 规格盒子 -->
+        <view class="sizeBox">
+          <view class="sizeName"><!-- 杯型 -->
+            {{commodity.information[0].title}}
+          </view>
+          <view 
+            wx:for="{{commodity.information[0].select}}" 
+            wx:key="index">
+            <view 
+              class="size {{index==select_0?'btnActive':'none'}}" bindtap="selectSize" 
+              data-index="{{index}}" 
+              data-num="{{0}}"
+              data-name="{{item.size}}"
+              data-price="{{item.price}}"
+              >{{item.size}}
+             
+            </view>
+          </view>
+        </view>
+        <view class="sizeBox">
+          <view class="sizeName">
+            {{commodity.information[1].title}}
+          </view>
+          <view 
+            wx:for="{{commodity.information[1].select}}" 
+            wx:key="index">
+            <view 
+            class="size {{index==select_1?'btnActive':'none'}}" bindtap="selectSize" 
+            data-index="{{index}}" 
+            data-num="{{1}}"
+            data-name="{{item.size}}"
+            data-price="{{item.price}}"
+            >
+              {{item.size}}
+            </view>
+          </view>
+        </view>
+        <view class="sizeBox">
+          <view class="sizeName">
+            {{commodity.information[2].title}}
+          </view>
+          <view 
+            wx:for="{{commodity.information[2].select}}" 
+            wx:key="index">
+            <view 
+              class="size {{index==0?'recommend':'none'}} {{index==select_2?'btnActive':'none'}}" 
+              bindtap="selectSize" 
+              data-index="{{index}}" 
+              data-num="{{2}}"
+              data-name="{{item.size}}"
+              data-price="{{item.price}}"
+              >
+                {{item.size}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+ <!-- -----------------收藏口味----------------- -->
+  <view class="collect">
+    <image src="/image/details_img/collect.png"></image>
+  </view>
+</view>
+<!-- ----------------------------------------- -->
+
+ <!-- ------------商品详情与价格说明------------ -->
+<view class="rests">
+  <view class="textBox">
+    <view>商品详情</view>
+    <view>...</view>
+  </view>
+  <view class="textBox" style="margin-bottom: 20rpx;">
+    <view>价格说明</view>
+    <view>...</view>
+  </view>
+</view>
+<!-- ----------------------------------------- -->
+
+ <!-- ------------------结算------------------ -->
+ <view class="clearing">
+  <view class="cl_top"><!-- 顶部 -->
+    <view class="priceBox"><!-- 价格盒子 -->
+      <view class="total_price"><!-- 总价 -->
+        <text>￥{{allPrice*num}}</text><!-- 现价 -->
+        <text>￥{{commodity.originalPrice}}</text><!-- 原价 -->
+      </view>
+      <view class="add_price">
+        {{commodity.title}}￥{{commodity.price}}+<!-- 原价 -->
+        {{sizeName_0+'￥'+price_0}}+<!-- 杯型选择 -->
+        {{sizeName_1+'￥'+price_1}}+<!-- 温度选择 -->
+        {{sizeName_2+'￥'+price_2}}<!-- 糖度选择 -->
+      </view><!-- 汇总 -->
+    </view>
+    <view class="btn_price"><!-- 数量按钮 -->
+      <view bindtap="minus">
+        <image src="/image/details_img/minus.png"></image>
+      </view><!-- 减 -->
+      <text>{{num}}</text><!-- 杯数 -->
+      <view bindtap="add">
+        <image src="/image/details_img/add.png"></image>
+      </view><!-- 加 -->
+    </view>
+  </view>
+  <view class="cl_btm"><!-- 底部 -->
+    <view bindtap="nowPay">立即购买</view>
+    <view bindtap="addShop">加入购物车</view>
+  </view>
+ </view>
+
+
+

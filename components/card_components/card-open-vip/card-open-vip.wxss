@@ -1,0 +1,76 @@
+/* components/card-open-vip/card-open-vip.wxss */
+.open_vip{/* 开通月份父盒子 */
+  width: 90%;
+  height: 240rpx;
+  margin: 0 auto;
+  margin-top: 25rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.open_time{/* 盒子 */
+  width: 48%;
+  height: 100%;
+  position: relative;
+}
+.hint{/* 标签 */
+  width: 80rpx;
+  height: 28rpx;
+  font-size: 17rpx;
+  text-align: center;
+  line-height: 28rpx;
+  color: white;
+  background: #F85837;
+  border-radius:10rpx 0 10rpx 0 ;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.text{/* 内容盒子 */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10rpx;
+}
+.text_top{/* 上部价格 */
+  flex: 8.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 10rpx 10rpx 0 0;
+  border-bottom: none !important;/* 取消底部边框 */
+}
+.time{/* 开通时间 */
+  font-size: 30rpx;
+  font-weight: 900;
+}
+.current_price{/* 现价 */
+  font-size: 40rpx;
+  font-weight: 900;
+}
+.symbol{/* 价格符号 */
+  font-size: 20rpx;
+}
+.original_price{/* 原价 */
+  font-size: 18rpx;
+  color: #cccccc;
+  text-decoration: line-through;
+}
+.tiem,.current_price,.original_price{/* 间距 */
+  margin-top: 8rpx;
+}
+.text_bottom{/* 下部提示文本 */
+  font-size: 24rpx;
+  font-weight: 900;
+  color: #A27F48;
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #EDD8B3;
+  border-top: none !important;/* 取消顶部边框 */
+  border-radius: 0 0 10rpx 10rpx;
+}

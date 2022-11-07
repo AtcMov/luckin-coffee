@@ -1,0 +1,46 @@
+<!--pages/order/order.wxml-->
+<view 
+  class="headLine" 
+  style="margin-top: {{menuTop}}px;height: {{menuHeight}}px;">
+  我的订单
+</view><!-- 顶部文字 -->
+
+<view class="order" wx:if="{{paySuccessData==''?true:false}}"><!-- 没订单 -->
+  <text>您还没有订单哦</text>
+  <view bindtap="toMenu">去喝一杯</view>
+</view>
+<view class="shop_box">
+  <view class="shop" wx:for="{{paySuccessData}}" wx:key="index">
+    <view class="top">
+      <view style="background: {{item.way=='takeOut'?'#C3A37B':'#374CB9'}};">{{item.way=='takeOut'?'外送':'自提'}}</view>
+      <view class="shop_name">{{item.shop}}</view>
+      <view>已完成</view>
+    </view>
+    <view class="main">
+      <view class="main_shop" wx:for="{{item.payShopData}}" wx:key="index">
+        <view class="img_box">
+          <image src="{{item.url}}"></image>
+        </view>
+        <view class="content_box">
+          <text>{{item.title}}</text>
+          <text>{{item.information}}</text>
+        </view>
+        <view class="num_box">
+          <text>x {{item.num}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="time_price">
+        <view class="time" style="color: #cccccc;">{{item.time}}</view>
+        <view class="price">
+          <text>共{{item.payShopData.length}}件商品 合计: <text style="font-weight: 900;">￥{{item.allPrice}}</text></text>
+          <text></text>
+        </view>
+      </view>
+      <view class="recur">
+        <view>再来一单</view>
+      </view>
+    </view>
+  </view>
+</view>

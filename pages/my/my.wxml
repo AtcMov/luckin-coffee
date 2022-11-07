@@ -1,0 +1,57 @@
+<!--pages/my/my.wxml-->
+<view class="top"><!-- 顶部登录、等级 -->
+  <image class="banana" src="/image/my_img/banana.webp"></image><!-- 背景图 -->
+  <view class="login"><!-- 登录 -->
+    <view><!-- 头像 -->
+      <image src="/image/index_img/default_photo.png"></image>
+    </view>
+    <text bindtap="logIn">{{userData.userName}} ></text>
+  </view>
+  <view class="grade"><!-- 等级 -->
+    <text class="headLine">{{userData.grade}}</text><!-- 标题 -->
+    <view class="integral"><!-- 积分 -->
+      <view><!-- 积分值 -->
+        {{userData.experience}}<image src="/image/my_img/coffee_bean.png"></image>
+      </view>
+      <view>去喝一杯,加入luckin ></view>
+    </view>
+    <view class="progress_bar"><!-- 进度条盒子 -->
+      <view></view><!-- 进度条 -->
+    </view>
+  </view>
+</view>
+<!-- ----------------------------------------- -->
+<view class="fun_box"><!-- 功能 -->
+  <view class="fun"><!-- 功能父盒子 -->
+    <view class="icon_box" wx:for="{{fakeData}}" wx:key="index" wx:if="{{index>4?!dropDown:true}}"><!-- 功能子盒子 -->
+      <view class="icon"><!-- 功能内容 -->
+        <image src="{{item.icon}}"></image><!-- 图片 -->
+        <text>{{item.title}}</text><!-- 文字 -->
+      </view>
+      </view>
+  </view>
+  <view class="drop_down" bindtap="isDropDown"><!-- 下拉按钮 -->
+    <image src="/image/my_img/pull-up.png" hidden="{{dropDown}}"></image><!-- 收起 -->
+    <image src="/image/my_img/pull-down.png" hidden="{{!dropDown}}"></image><!-- 展开 -->
+  </view>
+</view>
+<view class="advertising">
+  <image src="/image/index_img/main/advertising.jpg"></image>
+  <view>
+    立即查看>
+  </view>
+</view>
+<view class="gift_card">
+  <view class="gc_headLine">
+    <text>送礼品卡</text>
+    <text>查看全部</text>
+  </view>
+  <view class="gc_img">
+    <view>
+      <image src="/image/my_img/gift-card_01.png"></image>
+    </view>
+    <view>
+      <image src="/image/my_img/gift-card_02.png"></image>
+    </view>
+  </view>
+</view>

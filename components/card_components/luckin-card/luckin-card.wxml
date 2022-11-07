@@ -1,0 +1,6 @@
+<!--components/luckin-card/luckin-card.wxml-->
+<card-open-vip carouselList="{{carouselList}}" hint="{{'卡费优惠'}}"/><!-- 开通月份- -->
+<card-benefit benefitList="{{benefitList}}"/><!-- 开通福利 -->
+<card-else/><!-- 其他 -->
+
+
